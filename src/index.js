@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     const items = [1, 2, 3, 4, 5].map((id, i) => {
       return (
-        <div onClick={() => this.handleClick(i)}>
+        <div key={id} onClick={() => this.handleClick(i)}>
           <Child isClicked={this.state.clicked[i]} />
         </div>
       );
