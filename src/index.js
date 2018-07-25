@@ -11,14 +11,15 @@ const Child = ({ id, isClicked }) => (
 
 class App extends Component {
   state = {
-    // clicked: [] works too
+    // clicked: [] //works too
     clicked: {}
   };
 
   handleClick = i => {
     this.setState(prevState => {
-      // const clicked = [...prevState.clicked]; <- if clicked is declared as an array
+      // const clicked = [...prevState.clicked]; // <- if clicked is declared as an array
       const clicked = { ...prevState.clicked };
+      console.log(`prevState.clicked, clicked`, prevState.clicked, clicked);
       clicked[i] = !clicked[i];
       return { clicked };
     });
